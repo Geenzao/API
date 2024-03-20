@@ -4,7 +4,7 @@ const Defi = require('../models/Defi');
 const authenticateToken = require('../auth');
 
 // Récupération d'un défi aléatoire
-router.get('/random', async (req, res) => {
+router.get('/random', authenticateToken, async (req, res) => {
     try {
         const count = await Defi.countDocuments();
         const random = Math.floor(Math.random() * count);
@@ -22,7 +22,7 @@ router.get('/random', async (req, res) => {
 
 
 // Récupération de plusieurs défis aléatoires
-router.get('/multiple', async (req, res) => {
+router.get('/multiple', authenticateToken, async (req, res) => {
     try {
         const defis = await Defi.aggregate([{ $sample: { size: 100 } }]);
         res.status(200).json({

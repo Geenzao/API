@@ -3,6 +3,8 @@ const router = express.Router();
 const Defi = require('../models/Defi');
 const authenticateToken = require('../auth');
 
+const addDefi = require('../routes/FonctionsRouteDefis/addDefi');
+
 // Récupération d'un défi aléatoire
 router.get('/random', authenticateToken, async (req, res) => {
     try {
@@ -33,5 +35,7 @@ router.get('/multiple', authenticateToken, async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 });
+
+router.post('/add', addDefi.addDefi);
 
 module.exports = router;

@@ -7,7 +7,7 @@ Cela vous permettra de d'avoir votre token jwt.
 URL : http://localhost:3000/defis/random   
 4. Si vous souhaitez avoir plusieurs défis :  
 URL : http://localhost:3000/defis/multiple  
-5. Si vous souhaitez ajouter un defis :
+5. Si vous souhaitez ajouter un defis :  
 URL :  http://localhost:3000/defis/add  
 AUTHORIZATION BEARER : le token que vous venez de recevoir  
 BODY : {"titre":"Ce que vous voulez","description":"Ce que vous voulez"}

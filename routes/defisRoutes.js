@@ -9,10 +9,10 @@ const multipleDefi = require('../routes/FonctionsRouteDefis/multipleDefi');
 const modifyDefi = require('../routes/FonctionsRouteDefis/modifyDefi');
 const deleteDefi = require('../routes/FonctionsRouteDefis/deleteDefi');
 
-router.get('/random', authenticateToken, randomDefi.randomDefi);
+router.get('/random', randomDefi.randomDefi);
 
 // Récupération de plusieurs défis aléatoires
-router.get('/multiple', authenticateToken, multipleDefi.multipleDefi);
+router.get('/multiple', multipleDefi.multipleDefi);
 
 // Route pour modifier un défi spécifique
 router.put('/modify/:id', authenticateToken, modifyDefi.modifyDefi);

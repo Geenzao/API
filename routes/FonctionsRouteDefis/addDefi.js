@@ -1,6 +1,6 @@
 const Defi = require ('../../models/Defi');
 
-//Todo : la route doit être authentifiée.
+
 exports.addDefi = async (req, res) => {
     try {
         const { titre, description } = req.body;

@@ -4,38 +4,22 @@ const Defi = require('../models/Defi');
 const authenticateToken = require('../auth');
 
 const addDefi = require('../routes/FonctionsRouteDefis/addDefi');
+const randomDefi = require('../routes/FonctionsRouteDefis/randomDefi');
+const multipleDefi = require('../routes/FonctionsRouteDefis/multipleDefi');
+const modifyDefi = require('../routes/FonctionsRouteDefis/modifyDefi');
+const deleteDefi = require('../routes/FonctionsRouteDefis/deleteDefi');
 
-// Récupération d'un défi aléatoire
-router.get('/random', authenticateToken, async (req, res) => {
-    try {
-        const count = await Defi.countDocuments();
-        const random = Math.floor(Math.random() * count);
-        const defi = await Defi.findOne().skip(random);
-
-        res.status(200).json({
-            titre: defi.titre,
-            description: defi.description,
-        });
-
-    } catch (err) {
-        res.status(500).json({ message: err.message });
-    }
-});
-
+router.get('/random', authenticateToken, randomDefi.randomDefi);
 
 // Récupération de plusieurs défis aléatoires
-router.get('/multiple', authenticateToken, async (req, res) => {
-    try {
-        const defis = await Defi.aggregate([{ $sample: { size: 100 } }]);
-        res.status(200).json({
-            titre: defis.titre,
-            description: defis.description,
-        });
-    } catch (err) {
-        res.status(500).json({ message: err.message });
-    }
-});
+router.get('/multiple', authenticateToken, multipleDefi.multipleDefi);
 
-router.post('/add', addDefi.addDefi);
+// Route pour modifier un défi spécifique
+router.put('/modify/:id', authenticateToken, modifyDefi.modifyDefi);
+
+// Route pour supprimer un défi spécifique
+router.delete('/delete/:id', authenticateToken, deleteDefi.deleteDefi);
+
+router.post('/add', authenticateToken, addDefi.addDefi);
 
 module.exports = router;

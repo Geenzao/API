@@ -10,4 +10,6 @@ AUTHORIZATION BEARER : le token que vous venez de recevoir
 URL : http://localhost:3000/defis/multiple  
 AUTHORIZATION BEARER : le token que vous venez de recevoir  
 7. Si vous souhaitez ajouter un defis :
-"curl -X PUT \ http://localhost:3000/defis/add \ -H 
+URL :  http://localhost:3000/defis/add  
+AUTHORIZATION BEARER : le token que vous venez de recevoir  
+BODY : {"titre":"Ce que vous voulez","description":"Ce que vous voulez"}

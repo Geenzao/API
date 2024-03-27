@@ -3,13 +3,20 @@
 URL :  http://localhost:3000/auth/login  
 BODY : '{"username":"quentin","password":"password123"}'  
 Cela vous permettra de d'avoir votre token jwt.
-4. Vous etes maintenant connecter a l'api. Si vous souhaiter recevoir un defis random :  
+3. Vous etes maintenant connecter a l'api. Si vous souhaiter recevoir un defis random :  
 URL : http://localhost:3000/defis/random  
 AUTHORIZATION BEARER : le token que vous venez de recevoir  
-6. Si vous souhaitez avoir plusieurs défis :  
+4. Si vous souhaitez avoir plusieurs défis :  
 URL : http://localhost:3000/defis/multiple  
 AUTHORIZATION BEARER : le token que vous venez de recevoir  
-7. Si vous souhaitez ajouter un defis :
+5. Si vous souhaitez ajouter un defis :
 URL :  http://localhost:3000/defis/add  
 AUTHORIZATION BEARER : le token que vous venez de recevoir  
 BODY : {"titre":"Ce que vous voulez","description":"Ce que vous voulez"}
+6. Si vous souhaitez modifier un defis :  
+URL : http://localhost:3000/defis/modify/{id_du_defi}  
+AUTHORIZATION BEARER : le token que vous venez de recevoir  
+BODY : {"titre":"Ce que vous voulez","description":"Ce que vous voulez"}
+7. Si vous souhaitez supprimer un defis :  
+URL : http://localhost:3000/defis/modify/{id_du_defi}  
+AUTHORIZATION BEARER : le token que vous venez de recevoir  

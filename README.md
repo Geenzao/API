@@ -7,6 +7,7 @@ Cela vous permettra de d'avoir votre token jwt.
 URL : http://localhost:3000/defis/random  
 AUTHORIZATION BEARER : le token que vous venez de recevoir  
 6. Si vous souhaitez avoir plusieurs défis :  
-"curl -X GET \ http://localhost:3000/defis/multiple \ -H 'Authorization: Bearer votre_token_jwt'"
+URL : http://localhost:3000/defis/multiple  
+AUTHORIZATION BEARER : le token que vous venez de recevoir  
 7. Si vous souhaitez ajouter un defis :
 "curl -X PUT \ http://localhost:3000/defis/add \ -H 

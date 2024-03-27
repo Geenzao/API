@@ -1,3 +1,5 @@
+Avant de se lancer dans l'utilisation de l'api, il faut deja pouvoir la lancer. Pour la lancer, commencer par faire un "npm install" afin d'avoir tous les packages. Puis faite "node server" afin de lancer l'api. Normalement à ce stade, vous devriez être capable d'utiliser les requetes ci dessous.
+
 1. Pour utiliser l'api il faut tout d'abord un outils de test d'API. 
 2. Pour se connecter a l'API et ainsi avoir un token pour utiliser les requetes le demandant :  
 URL :  http://localhost:3000/auth/login  
